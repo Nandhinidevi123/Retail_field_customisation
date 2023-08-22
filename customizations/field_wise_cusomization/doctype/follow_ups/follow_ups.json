@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-07-15 11:50:49.069797",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "followed_by",
+  "next_followup_date",
+  "next_follow_up_by",
+  "status",
+  "mode_of_communication",
+  "description"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1,
+   "width": "2"
+  },
+  {
+   "fieldname": "followed_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Followed by",
+   "options": "User",
+   "width": "2"
+  },
+  {
+   "fieldname": "next_followup_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Next Followup Date",
+   "mandatory_depends_on": "eval:doc.date && !in_list(['Lost Quotation', 'Do not contact'],doc.status);"
+  },
+  {
+   "fieldname": "next_follow_up_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Next Follow up by",
+   "options": "User",
+   "width": "2"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nOpen\nLead\nInterested\nDemo Given\nInitial Discussion\nOpportunity\nRequirements Gathering\nQuotation\nReplied\nConverted\nOn Hold\nLost Quotation\nReiteration\nDo Not Contact",
+   "width": "2"
+  },
+  {
+   "fieldname": "mode_of_communication",
+   "fieldtype": "Link",
+   "label": "Mode of Communication",
+   "options": "Mode of Communication"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-22 12:51:57.718484",
+ "modified_by": "Administrator",
+ "module": "Field wise cusomization",
+ "name": "Follow Ups",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
